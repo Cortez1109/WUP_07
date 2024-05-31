@@ -37,8 +37,6 @@ $H_A$:There is a diffrence in
 
 
 
-
-
 # Methods
 
 result is categorical variable, sex is categorical  
@@ -67,6 +65,9 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+This numerical result show that 64% of males have died and 36% of females have died out of the 100% shown on the chart.  
+
+
 ## Inferential results 
 
 ```{r}
@@ -74,15 +75,10 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```  
+P-value for Chi-square test 0.001, so we  reject null hypothesis that gender by death in covid 19 is related by covid 19    
 
 
-
-The Fisher exact test shows that men are 2.3 times more likely to die than women in in Korea.
-
-
-  
-## Numerical results
-
+ The Fisher exact test shows that men are 2.3 times more likely to die than women in in Korea.  
 
 
 
