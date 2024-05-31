@@ -19,7 +19,7 @@ mutate(across(where(is.character), as.factor))
 
 ```
 ## Introductions 
-
+The report stated that the data and statistics to determine if there a correction between men and women in South Korea
 
 ### Data is from the Patient_Info dataset from South Korea 1 Jan to 1 May 2020
 ### This data was retrieved from a downloadable zip file from kaggle
@@ -39,25 +39,55 @@ $H_A$:There is a diffrence in
 
 
 
+# Methods
+
+result is categorical variable, sex is categorical  
+result depends on sex, we use helper file  
+cat~cat 
+
+# results
+
 
 ## Graphical results - use ggplot commands to do this  
 
+```{r}
+barchartGC(~result + Sex,data=kRdata)
+barchartGC(~result + Sex,data=kRdata, type="percent")
+
+```
+
+This barchart shows that there moredeaths of male than female   
 
 
-  
+## Numerical results
+
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
+
+## Inferential results 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```  
 
 
 
+The Fisher exact test shows that men are 2.3 times more likely to die than women in in Korea.
 
 
   
 ## Numerical results
 
 
-## Inferential results 
-
-
 
 
 ## Conclusions
+The question was is there a relationship between sex and deaths in South Korea due to Covid-19.The p-value ws 0.001 , that means that deaths caused by coivid Korea is not independent for gender. The report indicates that men are more likely to die due to covid.  
+
+
 
